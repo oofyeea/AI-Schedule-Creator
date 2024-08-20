@@ -27,7 +27,7 @@ while True:
         to_do_list.append(f'Task: {task}, Time (in hours): {time}')
         task_count += 1
 
-prompt = f"Create me a schedule with {breaks} in between tasks. I want to start at {starting_time}. Give me just the schedule and no filler text. This is the list of things I need to get done and the amount of time they will each take: {to_do_list}. Don't write anything in bold."
+prompt = f"Create me a full-day schedule with {breaks} in between tasks. Besides the tasks, include ordinary things a school student would do from morning to night. I want to start at {starting_time}. Give me just the schedule and no filler text. This is the list of things I need to get done and the amount of time they will each take: {to_do_list}. Don't write anything in bold."
 chat_completion = client.chat.completions.create(
     messages=[
         {
