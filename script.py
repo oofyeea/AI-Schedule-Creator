@@ -1,6 +1,6 @@
 from groq import Groq
 
-groq_api_key = open('AI Project\\GROQ_API_KEY.txt',mode='r').readline()
+groq_api_key = open('GROQ_API_KEY.txt',mode='r').readline()
 
 client = Groq(
     api_key = groq_api_key,
@@ -38,12 +38,12 @@ chat_completion = client.chat.completions.create(
     model="llama3-8b-8192",
 )
 
-schedule_count = open('AI Project\\schedule_count.txt',mode='r')
+schedule_count = open('schedule_count.txt',mode='r')
 current_schedule_id = int(schedule_count.readline())
 
-new_schedule = open(f'AI Project\\Schedules\\schedule_{current_schedule_id}.txt', mode='w')
+new_schedule = open(f'Schedules\\schedule_{current_schedule_id}.txt', mode='w')
 new_schedule.write(chat_completion.choices[0].message.content)
 
 new_schedule_count = current_schedule_id + 1
-schedule_count = open('AI Project\\schedule_count.txt',mode='w')
+schedule_count = open('schedule_count.txt',mode='w')
 schedule_count.write(str(new_schedule_count))
