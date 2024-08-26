@@ -6,7 +6,7 @@ client = Groq(
     api_key = groq_api_key,
 )
 
-print('Hey there! Tell me the things you have to get done and the amount of time they each take. Once you are done, say stop.\n')
+print('\nHey there! Tell me the things you have to get done and the amount of time they each take. Once you are done, say stop.\n')
 
 starting_time = input('What time do you want to start your to-do list?\n')
 
